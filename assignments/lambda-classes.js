@@ -25,11 +25,11 @@ class Instructor extends Person{
     }
 
     grade(student, subject){
-        console.log(`${studen.name} recieves a perfect score on ${subject}`);
+        console.log(`${student.name} recieves a perfect score on ${subject}`);
     }
 }
 
-class studen extends Person{
+class Student extends Person{
     constructor(sAttr){
         super(sAttr);
         this.previousBackground = sAttr.previousBackground;
@@ -38,7 +38,7 @@ class studen extends Person{
     }
 
     listsSubjects(){
-        for(i=0; i<this.favSubjects.length; i++){
+        for(var i=0; i<this.favSubjects.length; i++){
             console.log(this.favSubjects[i]);
         }
     }
@@ -63,8 +63,43 @@ class ProjectManager extends Instructor{
         console.log(`${this.name} announces to ${channel}, @channel standy times!`)
     }
 
-    debugsCode(student){
-        console.log(`${this.name} debugs ${student.name}'s code on ${thissubject}
+    debugsCode(student, subject){
+        console.log(`${this.name} debugs ${student.name}'s code on ${subject}
         `)
     }
 }
+
+const trang = new Student({
+    name: "Trang",
+    location: "NYC",
+    age: 18,
+    previousBackground: "Student at Columbia",
+    className: "Web21",
+    favSubjects: ['Html', 'CSS', 'JavaScript']
+});
+
+const lisa= new ProjectManager({
+    name: "Lisa",
+    location: "Texas",
+    age: 30,
+    previousBackground: "Military",
+    specialty: "Web development",
+    favLanguage: "English",
+    catchPhrase: "Howdy y'all!",
+    gradClassName: "Web10",
+    favInstructor: "Josh"
+
+});
+
+
+trang.listsSubjects();
+trang.speak();
+trang.PRAssignment("Math");
+trang.sprintChallenge("CSS");
+
+lisa.speak();
+lisa.favLanguage;
+lisa.demo("math");
+lisa.grade(trang, "math");
+lisa.standUp("Web_21");
+lisa.debugsCode(trang, "math");
